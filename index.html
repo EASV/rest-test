@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="app.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+              <section v-if="errored">
+                <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
+              </section>
+            
+              <section v-else>
+                <div v-if="loading">Loading...</div>
+            
+                <div v-else>
+                  <h1>Posts</h1>
+                  <ul>
+                      <li v-for="post in posts">
+                        {{ post.title }}
+                      </li>
+                  </ul>
+                </div>
+            
+              </section>
+        </div>
+        
+        <script src="app.js"></script>
+    </body>
+</html>
